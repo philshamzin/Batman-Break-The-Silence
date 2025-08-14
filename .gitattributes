@@ -1,2 +1,56 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Ensure text files use LF line endings for cross-platform consistency
+*.cs text eol=lf
+*.asset text eol=lf
+*.meta text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+
+# Treat certain files as binary to prevent Git from attempting to diff or merge them
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.fbx binary
+*.obj binary
+*.dae binary
+*.max binary
+*.blend binary
+*.mb binary
+*.ma binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.prefab binary
+*.mat binary
+*.anim binary
+*.controller binary
+*.physicMaterial binary
+*.physicsMaterial2D binary
+*.guiskin binary
+*.fontsettings binary
+*.asset binary diff
+*.meta binary diff
+
+# Git LFS for large binary files
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.dae filter=lfs diff=lfs merge=lfs -text
+*.max filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.mb filter=lfs diff=lfs merge=lfs -text
+*.ma filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+
+# Ensure Unity YAML files are mergeable
+*.unity text eol=lf diff=unityyamlmerge merge=unityyamlmerge
